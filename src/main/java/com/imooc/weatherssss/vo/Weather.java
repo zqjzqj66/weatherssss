@@ -1,7 +1,9 @@
 package com.imooc.weatherssss.vo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,16 +14,21 @@ import java.util.List;
  * @date 2019/5/16 10:49
  */
 @Slf4j
-public class Weather {
+public class Weather implements Serializable {
 
+    @JsonProperty("yesterday")
     private Yesterday yesterday;
 
+    @JsonProperty("city")
     private String city;
 
+    @JsonProperty("forecast")
     private List<Forecast> forecast;
 
+    @JsonProperty("ganmao")
     private String ganmao;
 
+    @JsonProperty("wendu")
     private String wendu;
 
 }
