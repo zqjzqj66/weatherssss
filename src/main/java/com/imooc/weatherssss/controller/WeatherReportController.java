@@ -32,7 +32,7 @@ public class WeatherReportController {
     public ModelAndView reportWeather(@PathVariable("cityId") String cityId, Model model){
         model.addAttribute("title","格调的天气预报" );
         model.addAttribute("cityId",cityId );
-        model.addAttribute("cityList",cityDataService.getCityList() );
+        model.addAttribute("cityList",cityDataService.getCityList().getCityList() );
         model.addAttribute("report",weatherReportService.getDataByCityId(cityId));
         return new ModelAndView("weather/report","reportModel",model);
     }

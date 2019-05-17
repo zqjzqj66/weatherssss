@@ -20,6 +20,13 @@
 
 	<dependencies>
 
+        <!--开启热部署-->
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>-->
+
         <!--thymeleaf模板引擎-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
