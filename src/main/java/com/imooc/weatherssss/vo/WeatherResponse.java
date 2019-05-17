@@ -2,6 +2,7 @@ package com.imooc.weatherssss.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
 import java.io.Serializable;
 
@@ -13,6 +14,7 @@ import java.io.Serializable;
  * @date 2019/5/16 10:56
  */
 @JsonIgnoreProperties
+@Data
 public class WeatherResponse implements Serializable {
 
     //数据

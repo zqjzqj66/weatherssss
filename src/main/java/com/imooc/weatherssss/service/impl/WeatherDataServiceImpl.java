@@ -27,12 +27,12 @@ import java.util.concurrent.TimeUnit;
 public class WeatherDataServiceImpl implements WeatherDataService {
 
     @Autowired
-    private StringRedisTemplate redisTemplate;
+    private StringRedisTemplate stringRedisTemplate;
 
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final int TIME_OUT=100;
+    private static final int TIME_OUT=1800;
 
     private final String WEATHER_URL="http://wthrcdn.etouch.cn/weather_mini?";
 
@@ -53,7 +53,7 @@ public class WeatherDataServiceImpl implements WeatherDataService {
     public void syncWeatherData(String cityId) {
         String url=WEATHER_URL+"citykey="+cityId;
         String strBody=null;
-        ValueOperations<String, String> ops = redisTemplate.opsForValue();
+        ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
 
         log.info("sync data");
         //使用restTemplate来获取数据
@@ -72,9 +72,9 @@ public class WeatherDataServiceImpl implements WeatherDataService {
 
 
         String strBody=null;
-        ValueOperations<String, String> ops = redisTemplate.opsForValue();
+        ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
 
-        if(redisTemplate.hasKey(url)){
+        if(stringRedisTemplate.hasKey(url)){
             strBody = ops.get(url);
             log.info(url+" redis has this data");
         }else{

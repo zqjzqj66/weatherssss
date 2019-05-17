@@ -1,5 +1,4 @@
-#spring:
-#  redis:
-#      host: 127.0.0.1
-#      port: 6379
-#      password: 123456
+spring:
+  thymeleaf:
+    # 关闭thymeleaf的缓存，防止在页面调试当中出现缓存页面 影响开发
+    cache: false
