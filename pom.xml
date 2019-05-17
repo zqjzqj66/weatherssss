@@ -20,6 +20,12 @@
 
 	<dependencies>
 
+        <!--quartz定时器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+
 		<!-- httpclinet -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
