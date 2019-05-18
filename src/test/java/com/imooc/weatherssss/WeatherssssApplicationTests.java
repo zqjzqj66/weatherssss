@@ -16,14 +16,13 @@ public class WeatherssssApplicationTests {
 	@Test
 	public void contextLoads() throws MalformedURLException {
 
-		/*String fileName = WeatherssssApplicationTests.class.getClassLoader()
-                .getResource("cityList.xml").getPath();
-		//String fileUtl = WeatherssssApplicationTests.class.getResource("cityList.xml").getFile();
-		System.out.println(fileName);
-		//System.out.println(fileUtl);
-        final String path = WeatherssssApplicationTests.class.getClassLoader()
-                .getResource("cityList.xml").getFile();
-        System.out.println(path);*/
+        /*final URL resource = this.getClass().getResource("cityList.xml");
+        final URL resource1 = this.getClass().getClassLoader().getResource("cityList.xml");
+        System.out.println(resource);
+        System.out.println(resource1);*/
+
+        String property =System.getProperty("user.dir");
+        System.out.println(property);
 
 
     }

@@ -7,6 +7,7 @@ import com.imooc.weatherssss.vo.CityList;
 import org.springframework.stereotype.Service;
 
 import javax.xml.bind.JAXBException;
+import java.io.IOException;
 
 /**
  * Description:
@@ -27,7 +28,7 @@ public class CityDataServiceImpl implements CityDataService {
         CityList cityList=null;
         try {
             cityList = (CityList) XMLToJava.xmlToJava(CityList.class,CITY_LIST_FILE);
-        } catch (JAXBException e) {
+        } catch (JAXBException | IOException e) {
             e.printStackTrace();
         }
         return cityList;
